@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     private void addName(int position) {
          names.add(position, "New Name" + (++ counter));
          mAdapter.notifyItemInserted(position);    //Tenemos que decirle al adaptador que algo ha cambiado como se le hizo al ListView
-        mLayoutManager.scrollToPosition(position);  //CON ESTE METODO SIEMPRE NOS PONDRA EN LA ULTIMA POSIICON AÑADIDA 
+        mLayoutManager.scrollToPosition(position);  //CON ESTE METODO SIEMPRE NOS PONDRA EN LA ULTIMA POSIICON AÑADIDA
     }
 
     private void deleteName(int position){   /*Este metodo es para  eliminar objeto sy notiifcarle al adapter que s ea eliminado algo */
@@ -90,5 +90,4 @@ public class MainActivity extends AppCompatActivity {
          mAdapter.notifyItemRemoved(position);
 
     }
-
 }//end on create
