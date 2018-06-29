@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         private RecyclerView.Adapter mAdapter;    /*Se puede declarar como el extends que es RecyclerView.Adapter  o como el padre que se llama MyAdapter  ambos casos son acpetables*/
         private RecyclerView.LayoutManager mLayoutManager;
 
-        private int counter  = 0 ;   // se crea un contador para le metodo AddName  simplemente para ir oambiando el nombre
+        private int contador  = 0 ;   // se crea un contador para le metodo AddName  simplemente para ir oambiando el nombre
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,12 +86,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void addName(int position) {
-         names.add(position, "New Name" + (++ counter));
+         names.add(position, "New Name" + (++ contador));
          mAdapter.notifyItemInserted(position);    //Tenemos que decirle al adaptador que algo ha cambiado como se le hizo al ListView
-        mLayoutManager.scrollToPosition(position);  //CON ESTE METODO SIEMPRE NOS PONDRA EN LA ULTIMA POSIICON AÑADIDA
+         mLayoutManager.scrollToPosition(position);  //CON ESTE METODO SIEMPRE NOS PONDRA EN LA ULTIMA POSIICON AÑADIDA
+        System.out.println("New Name" + contador);
+
     }
 
     private void deleteName(int position){   /*Este metodo es para  eliminar objeto sy notiifcarle al adapter que s ea eliminado algo */
+         //Toast.makeText(MainActivity.this, position, Toast.LENGTH_SHORT).show();
          names.remove(position);
          mAdapter.notifyItemRemoved(position);
 
