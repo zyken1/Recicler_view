@@ -70,7 +70,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{   /* 
             itemView.setOnClickListener(new View.OnClickListener(){  /*El itemView  tiene una instancia para la vista entera */
                 @Override
                 public void onClick(View view) {
-                    Listener.onItemClick(name, getPosition()); /*getAdapterPosition*/
+                    Listener.onItemClick(name, getAdapterPosition()); /*getAdapterPosition*/
                 }
             });
       }//Aqui termina el blind
